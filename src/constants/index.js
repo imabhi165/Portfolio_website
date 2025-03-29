@@ -57,9 +57,8 @@ export const POST = [
 ];
 
 export const contactInfo = {
-  phoneNumber: '+91234567989',
-  email: 'random@gmail.com',
-  github: 'https://Your-Github-Url',
-  linkedin: 'https://www.Your-Linkedln-Url/',
-  twitter: 'https://Your-twitter-Url',
+  phoneNumber: '7808060981',
+  email: 'imabhi165@gmail.com',
+  github: 'https://github.com/imabhi165/',
+  linkedin: '',
 };
