@@ -111,13 +111,7 @@ const Contact = () => {
                  rel="noopener noreferrer" 
                  className="text-white hover:text-blue-300 transition-all duration-300">
                   <TiSocialLinkedinCircular size={50} />
-                </a>
-                <a href={contactInfo.twitter} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-white hover:text-blue-300 transition-all duration-300">
-                  <FaXTwitter size={35} />
-                </a>
+              
                 <a href={`mailto:${contactInfo.email}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
