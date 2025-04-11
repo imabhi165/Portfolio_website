@@ -60,5 +60,5 @@ export const contactInfo = {
   phoneNumber: '7808060981',
   email: 'imabhi165@gmail.com',
   github: 'https://github.com/imabhi165/',
-  linkedin: 'www.linkedin.com/in/imabhi165',
+  linkedin: 'https://www.linkedin.com/in/imabhi165'
 };
