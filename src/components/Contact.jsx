@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaGithub, FaPhone } from 'react-icons/fa'; 
-import { TiSocialLinkedinCircular } from "react-icons/ti";
-import { FaXTwitter } from "react-icons/fa6";
-import { useRef, useState, useEffect } from 'react';  
-import emailjs from 'emailjs-com';  
-import { contactInfo } from '../constants/index'; 
+import { FaEnvelope, FaGithub, FaPhone } from 'react-icons/fa';
+import { TiSocialLinkedinCircular } from 'react-icons/ti';
+import { FaXTwitter } from 'react-icons/fa6';
+import { useRef, useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
+import { contactInfo } from '../constants/index'; // Ensure this file exists and exports an object
 
 const Contact = () => {
-  const form = useRef();  
-  const [messageStatus, setMessageStatus] = useState(''); 
+  const form = useRef();
+  const [messageStatus, setMessageStatus] = useState('');
   const [messageType, setMessageType] = useState('');
 
   const sendEmail = (e) => {
@@ -23,8 +23,8 @@ const Contact = () => {
 
     if (!fromName || !fromEmail || !message) {
       setMessageStatus('Please fill in all the fields.');
-      setMessageType('error');  
-      return;  
+      setMessageType('error');
+      return;
     }
 
     // Email format validation
@@ -35,25 +35,25 @@ const Contact = () => {
       return;
     }
 
-    setMessageStatus('Sending...');  
+    setMessageStatus('Sending...');
 
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID; // Use process.env for React
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const userId = process.env.REACT_APP_EMAILJS_USER_ID;
 
       emailjs.sendForm(serviceId, templateId, form.current, userId)
         .then(() => {
-          setMessageStatus('Message sent successfully! I will get back to you soon.'); 
-          setMessageType('success');  
+          setMessageStatus('Message sent successfully! I will get back to you soon.');
+          setMessageType('success');
         })
         .catch((error) => {
-          setMessageStatus(`Failed to send message: ${error.text || error.message}`);  
-          setMessageType('error');  
+          setMessageStatus(`Failed to send message: ${error.text || error.message}`);
+          setMessageType('error');
         });
     } catch (error) {
-      setMessageStatus(`Unexpected error: ${error.message}`); 
-      setMessageType('error');  
+      setMessageStatus(`Unexpected error: ${error.message}`);
+      setMessageType('error');
     }
   };
 
@@ -98,28 +98,36 @@ const Contact = () => {
                 Let's work <br /> together!
               </h2>
               <div className="flex space-x-6 mt-8 items-center">
-                <a href={contactInfo.github} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-black hover:text-gray-600 transition-all duration-300">
+                <a
+                  href={contactInfo.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-gray-600 transition-all duration-300"
+                >
                   <div className="border-4 border-white rounded-full">
                     <FaGithub size={30} className="text-gray-800 hover:text-white transition-colors duration-300" />
                   </div>
                 </a>
-                <a href={contactInfo.linkedin} 
-                target="_blank"
-                 rel="noopener noreferrer" 
-                 className="text-white hover:text-blue-300 transition-all duration-300">
+                <a
+                  href={contactInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-blue-300 transition-all duration-300"
+                >
                   <TiSocialLinkedinCircular size={50} />
-              
-                <a href={`mailto:${contactInfo.email}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-white hover:text-gray-300 transition-all duration-300">
+                </a>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-gray-300 transition-all duration-300"
+                >
                   <FaEnvelope size={35} />
                 </a>
-                <a href={`tel:${contactInfo.phoneNumber}`} 
-                className="text-white hover:text-green-300 transition-all duration-300">
+                <a
+                  href={`tel:${contactInfo.phoneNumber}`}
+                  className="text-white hover:text-green-300 transition-all duration-300"
+                >
                   <FaPhone size={35} />
                 </a>
               </div>
@@ -131,8 +139,8 @@ const Contact = () => {
             onSubmit={sendEmail}
             className="flex-1 flex flex-col gap-y-6 pb-24 p-6 items-start rounded-xl w-full mx-auto transition-all duration-300"
             style={{
-              boxShadow: '0px 4px 15px 0px rgba(255, 255, 255, 0.5)', 
-              background: 'transparent', 
+              boxShadow: '0px 4px 15px 0px rgba(255, 255, 255, 0.5)',
+              background: 'transparent',
             }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.boxShadow =
@@ -182,27 +190,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
