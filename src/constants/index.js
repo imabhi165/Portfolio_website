@@ -16,6 +16,15 @@ export const EXPERIENCES = [
                    Gained hands-on experience in PWM-based motor control, sensor integration, and real-time data logging.`,
     technologies: ["STM32", "C", "UART", "SPI", "I2C", "PWM", "Real-time Data Logging"],
   },
+ {
+    year: "July 2025 - April 2026",
+    role: "Software Engineer Intern",
+    company: "Avench Systems Pvt.Ltd",
+    description: `Worked on STM32 microcontrollers, focusing on peripheral interfacing and embedded development.
+                  Developed and tested applications using UART, SPI, and I2C communication protocols.
+                   Gained hands-on experience in PWM-based motor control, sensor integration, and real-time data logging.`,
+    technologies: ["STM32", "C", "UART", "SPI", "I2C", "PWM", "Real-time Data Logging"],
+  },
   
   
 ];
