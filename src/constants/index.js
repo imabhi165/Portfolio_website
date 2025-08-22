@@ -3,7 +3,17 @@
 export const Photo_CONTENT = `Proactive Full-Stack Web Developer and Embedded Systems Engineer with hands-on experience gained during an internship. Skilled in building user-friendly applications, optimizing system performance, and developing embedded solutions using STM32, Arduino, and Raspberry Pi. Eager to leverage my expertise in web development and electronics to create impactful, technology-driven solutions.Let's collaborate and bring innovative ideas to life.`;
 
 
- export const ABOUT_TEXT = ``;
+ export const ABOUT_TEXT = `I am an aspiring Full Stack Developer with a strong foundation in JavaScript, Node.js, Express.js, React, and DevOps practices. I am eager to contribute my skills in building scalable web applications, deploying cloud-native solutions, and integrating modern development practices. With a passion for continuous learning, I explore technologies like Docker, Nginx, AWS, and Linux to strengthen my backend and deployment expertise.
+My journey reflects a balance between software development and system-level programming, giving me a versatile skill set to tackle diverse challenges. I thrive in problem-solving environments and enjoy collaborating on impactful projects that bring real-world value.
+
+Alongside my web development journey, I also have hands-on experience in Embedded Systems:
+
+Worked with Arduino, STM32, Raspberry Pi Pico, Vega, and Aries microcontrollers.
+
+Built practical projects such as a Smart Energy Meter and a Smart Irrigation System.
+
+Familiar with C programming, hardware integration, and signal processing techniques.
+`;
 
 
 export const EXPERIENCES = [
