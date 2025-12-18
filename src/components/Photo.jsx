@@ -39,16 +39,15 @@ const Photo = () => {
         </p>
 
         <div className="flex space-x-4 mb-8">
-          
           <a
             href="#contact"
             className="px-6 py-2 text-white font-medium rounded-full border border-white bg-[#181818] hover:bg-gradient-to-r hover:from-[#6A1B6E] hover:to-[#0B4C7D] transition-all duration-300"
           >
             Let's Connect
           </a>
-          
+
           <a
-            href="/Abhishek_Kushwaha.pdf"
+            href="/resume.pdf"
             className="px-6 py-2 text-white font-medium rounded-full border border-white bg-[#181818] hover:bg-gradient-to-r hover:from-[#6A1B6E] hover:to-[#0B4C7D] transition-all duration-300"
             target="_blank"
           >
@@ -61,21 +60,3 @@ const Photo = () => {
 };
 
 export default Photo;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
