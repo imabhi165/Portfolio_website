@@ -1,68 +1,73 @@
-import { motion } from 'framer-motion';
-import { FaEnvelope, FaGithub, FaPhone } from 'react-icons/fa';
-import { TiSocialLinkedinCircular } from 'react-icons/ti';
-import { FaXTwitter } from 'react-icons/fa6';
-import { useRef, useState, useEffect } from 'react';
-import emailjs from 'emailjs-com';
-import { contactInfo } from '../constants/index'; // Ensure this file exists and exports an object
+import { motion } from "framer-motion";
+import { FaEnvelope, FaGithub, FaPhone } from "react-icons/fa";
+import { TiSocialLinkedinCircular } from "react-icons/ti";
+import { FaXTwitter } from "react-icons/fa6";
+import { useRef, useState, useEffect } from "react";
+import emailjs from "emailjs-com";
+import { contactInfo } from "../constants/index"; // Ensure this file exists and exports an object
 
 const Contact = () => {
   const form = useRef();
-  const [messageStatus, setMessageStatus] = useState('');
-  const [messageType, setMessageType] = useState('');
+  const [messageStatus, setMessageStatus] = useState("");
+  const [messageType, setMessageType] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    setMessageStatus('');
-    setMessageType('');
+    setMessageStatus("");
+    setMessageType("");
 
     const fromName = form.current.from_name.value;
     const fromEmail = form.current.from_email.value;
     const message = form.current.message.value;
 
     if (!fromName || !fromEmail || !message) {
-      setMessageStatus('Please fill in all the fields.');
-      setMessageType('error');
+      setMessageStatus("Please fill in all the fields.");
+      setMessageType("error");
       return;
     }
 
     // Email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(fromEmail)) {
-      setMessageStatus('Please enter a valid email address.');
-      setMessageType('error');
+      setMessageStatus("Please enter a valid email address.");
+      setMessageType("error");
       return;
     }
 
-    setMessageStatus('Sending...');
+    setMessageStatus("Sending...");
 
     try {
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID; // Use process.env for React
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-      const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const userId = import.meta.env.VITE_EMAILJS_USER_ID;
 
-      emailjs.sendForm(serviceId, templateId, form.current, userId)
+      emailjs
+        .sendForm(serviceId, templateId, form.current, userId)
         .then(() => {
-          setMessageStatus('Message sent successfully! I will get back to you soon.');
-          setMessageType('success');
+          setMessageStatus(
+            "Message sent successfully! I will get back to you soon."
+          );
+          setMessageType("success");
         })
         .catch((error) => {
-          setMessageStatus(`Failed to send message: ${error.text || error.message}`);
-          setMessageType('error');
+          setMessageStatus(
+            `Failed to send message: ${error.text || error.message}`
+          );
+          setMessageType("error");
         });
     } catch (error) {
       setMessageStatus(`Unexpected error: ${error.message}`);
-      setMessageType('error');
+      setMessageType("error");
     }
   };
 
   useEffect(() => {
     if (messageStatus) {
       const timer = setTimeout(() => {
-        setMessageStatus('');
-        setMessageType('');
-      }, 1000);
+        setMessageStatus("");
+        setMessageType("");
+      }, 5000);
 
       return () => clearTimeout(timer);
     }
@@ -91,7 +96,12 @@ const Contact = () => {
             className="flex-1 flex justify-start items-center flex-col"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, type: 'spring', stiffness: 100, damping: 25 }}
+            transition={{
+              delay: 0.3,
+              type: "spring",
+              stiffness: 100,
+              damping: 25,
+            }}
           >
             <div>
               <h2 className="text-[45px] lg:text-[90px] leading-none mb-12">
@@ -105,7 +115,10 @@ const Contact = () => {
                   className="text-black hover:text-gray-600 transition-all duration-300"
                 >
                   <div className="border-4 border-white rounded-full">
-                    <FaGithub size={30} className="text-gray-800 hover:text-white transition-colors duration-300" />
+                    <FaGithub
+                      size={30}
+                      className="text-gray-800 hover:text-white transition-colors duration-300"
+                    />
                   </div>
                 </a>
                 <a
@@ -139,15 +152,16 @@ const Contact = () => {
             onSubmit={sendEmail}
             className="flex-1 flex flex-col gap-y-6 pb-24 p-6 items-start rounded-xl w-full mx-auto transition-all duration-300"
             style={{
-              boxShadow: '0px 4px 15px 0px rgba(255, 255, 255, 0.5)',
-              background: 'transparent',
+              boxShadow: "0px 4px 15px 0px rgba(255, 255, 255, 0.5)",
+              background: "transparent",
             }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.boxShadow =
-                '0px 4px 15px 0px rgba(11, 76, 125, 0.8), 0px 4px 15px 0px rgba(106, 27, 110, 0.8)')
+                "0px 4px 15px 0px rgba(11, 76, 125, 0.8), 0px 4px 15px 0px rgba(106, 27, 110, 0.8)")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.boxShadow = '0px 4px 15px 0px rgba(255, 255, 255, 0.5)')
+              (e.currentTarget.style.boxShadow =
+                "0px 4px 15px 0px rgba(255, 255, 255, 0.5)")
             }
           >
             <input
@@ -170,7 +184,9 @@ const Contact = () => {
 
             {messageStatus && (
               <div
-                className={`w-full py-3 px-6 mt-4 text-center ${messageType === 'success' ? 'text-green-500' : 'text-red-500'}`}
+                className={`w-full py-3 px-6 mt-4 text-center ${
+                  messageType === "success" ? "text-green-500" : "text-red-500"
+                }`}
               >
                 {messageStatus}
               </div>
