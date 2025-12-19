@@ -40,12 +40,51 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
-
-
-
-  
- 
-
+  {
+    title: "E-Commerce Platform",
+    image: "/src/assets/projects/project-1.jpg",
+    description: "A full-stack e-commerce application with user authentication, product management, and payment integration.",
+    technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
+    gitUrl: "https://github.com/username/ecommerce-platform",
+    previewUrl: "https://ecommerce-platform-demo.netlify.app",
+    category: "Full Stack"
+  },
+  {
+    title: "Task Management App",
+    image: "/src/assets/projects/project-2.png",
+    description: "A collaborative task management application with real-time updates and team collaboration features.",
+    technologies: ["React", "Firebase", "Tailwind CSS", "Context API"],
+    gitUrl: "https://github.com/username/task-manager",
+    previewUrl: "https://task-manager-demo.netlify.app",
+    category: "Full Stack"
+  },
+  {
+    title: "Weather Dashboard",
+    image: "/src/assets/projects/project-3.png",
+    description: "A responsive weather dashboard that displays current weather and forecasts using external APIs.",
+    technologies: ["JavaScript", "HTML", "CSS", "OpenWeather API"],
+    gitUrl: "https://github.com/username/weather-dashboard",
+    previewUrl: "https://weather-dashboard-demo.netlify.app",
+    category: "Clone"
+  },
+  {
+    title: "Portfolio Website",
+    image: "/src/assets/projects/project-4.jpg",
+    description: "A modern, responsive portfolio website showcasing projects and skills with smooth animations.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    gitUrl: "https://github.com/username/portfolio",
+    previewUrl: "https://portfolio-demo.netlify.app",
+    category: "Full Stack"
+  },
+  {
+    title: "Chat Application",
+    image: "/src/assets/projects/project-5.jpg",
+    description: "A real-time chat application with user authentication and message history.",
+    technologies: ["React", "Socket.io", "Node.js", "MongoDB"],
+    gitUrl: "https://github.com/username/chat-app",
+    previewUrl: "https://chat-app-demo.netlify.app",
+    category: "Full Stack"
+  }
 ];
 
 export const EDUCATION = [
