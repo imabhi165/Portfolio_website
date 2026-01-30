@@ -51,7 +51,7 @@ export const EXPERIENCES = [
 export const PROJECTS = [
   {
     title: "Payment Processing System",
-    image: "/src/assets/projects/payment-system.jpg",
+    image: "/src/assets/projects/project-1.jpg",
     description:
       "Secure Java payment system with AES encryption, fraud detection, and concurrent transaction processing using multithreading.",
     technologies: [
@@ -68,7 +68,7 @@ export const PROJECTS = [
   },
   {
     title: "AWS Serverless Website Monitor",
-    image: "/src/assets/projects/aws-monitor.png",
+    image: "/src/assets/projects/project-2.png",
     description:
       "Serverless uptime monitoring system with automated health checks, email alerts, and 99.95% uptime accuracy.",
     technologies: [
@@ -85,7 +85,7 @@ export const PROJECTS = [
   },
   {
     title: "APT Software Update Manager",
-    image: "/src/assets/projects/update-manager.png",
+    image: "/src/assets/projects/project-3.png",
     description:
       "Debian package management system with client-server architecture, Docker containerization, and secure update verification.",
     technologies: [
@@ -102,7 +102,7 @@ export const PROJECTS = [
   },
   {
     title: "Currency Converter Web App",
-    image: "/src/assets/projects/currency-converter.png",
+    image: "/src/assets/projects/project-4.jpg",
     description:
       "React-based currency converter with live exchange rates, responsive UI, and 95+ Lighthouse performance score.",
     technologies: [
@@ -118,7 +118,7 @@ export const PROJECTS = [
   },
   {
     title: "Command-Line Banking Application",
-    image: "/src/assets/projects/banking-app.png",
+    image: "/src/assets/projects/project-5.jpg",
     description:
       "Java-based CLI banking application with account management, transaction processing, and robust input validation.",
     technologies: [
@@ -134,7 +134,7 @@ export const PROJECTS = [
   },
   {
     title: "STM32-Based Weather Station",
-    image: "/src/assets/projects/weather-station.jpg",
+    image: "/src/assets/projects/project-1.png",
     description:
       "Embedded weather monitoring system with real-time temperature, humidity, and pressure data collection and display.",
     technologies: [
@@ -169,7 +169,44 @@ export const EDUCATION = [
   },
 ];
 
-export const CERTIFICATIONS = [];
+export const CERTIFICATES = [
+  {
+    title: "Full Stack Web Development (0-1)",
+    issuer: "Harkirat Singh",
+    issueDate: "2023",
+    credentialUrl:
+      "https://drive.google.com/file/d/1bZqziucXtyY5mBzzfTwJ0lK-lXHgYZAl/view?usp=sharing",
+    skills: ["React", "Node.js", "Express.js", "MongoDB", "JavaScript"],
+  },
+  {
+    title: "Computer Networking: Master Computer Network",
+    issuer: "Scaler",
+    issueDate: "2023",
+    credentialUrl:
+      "https://drive.google.com/file/d/1v-EPc3wklt9uN_BPp-9FAkAKWv-FZssw/view?usp=sharing",
+    skills: [
+      "TCP/IP",
+      "Network Protocols",
+      "DNS",
+      "HTTP/HTTPS",
+      "Network Security",
+    ],
+  },
+  {
+    title: "Basics of Embedded C Programming",
+    issuer: "Mind Luster",
+    issueDate: "2022",
+    credentialUrl:
+      "https://drive.google.com/file/d/16SSH8QTLC29G7YRCKRlwnz7DByb1pBlZ/view?usp=sharing",
+    skills: [
+      "Embedded C",
+      "Microcontrollers",
+      "GPIO",
+      "Interrupts",
+      "Memory Management",
+    ],
+  },
+];
 
 export const POST = [];
 
