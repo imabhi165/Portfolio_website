@@ -160,8 +160,9 @@ const Photo = () => {
             </motion.a>
 
             <motion.a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1k7sHVLMMPRLq5ATBXW5g2Y5CB_53sla4/view?usp=sharing"
               target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full backdrop-blur-sm bg-white/10 hover:bg-white/20 transition-all duration-300 text-center"
               whileHover={{
                 scale: 1.05,
