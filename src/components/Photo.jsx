@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 const Photo = () => {
   return (
     <section
-      className="flex flex-col items-center justify-center min-h-screen pt-32 pb-20 px-4"
       id="home"
+      className="relative z-20 flex flex-col items-center justify-center min-h-screen pt-32 pb-20 px-4"
     >
       <motion.div
         className="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-7xl mx-auto"
